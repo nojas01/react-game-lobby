@@ -1,8 +1,10 @@
 import API from '../../api/client'
 import game from './join'
-const api = new API()
 
 export const TAKE_TILE = 'TAKE_TILE'
+
+const api = new API()
+
 
 export default () => {
   return (dispatch) => {
@@ -11,4 +13,13 @@ export default () => {
       payload: game
   })
 }
+}
+
+export const takeTile = (index) => {
+  return (dispatch) => {
+    dispatch({
+    type: 'TAKE_TILE',
+    payload: index
+    })
+  }
 }
