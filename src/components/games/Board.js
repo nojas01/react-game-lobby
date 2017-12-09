@@ -12,6 +12,7 @@ class Board extends PureComponent {
       type: 'TAKE_TILE',
       payload: index
     })
+    
   }
 
   renderTile = (value, index) => {

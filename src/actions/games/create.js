@@ -10,12 +10,14 @@ import {
 
 const api = new API()
 
-export default () => {
+export default (game) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
     api.post('/games', {})
-      .then(() => {
+      .then((res) => {
+        console.table(res)
+        // console.table(game)
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })
       })
