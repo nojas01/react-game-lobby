@@ -11,7 +11,7 @@ export default (ticTacToeIndex, game) => (dispatch) => () => {
     payload: ticTacToeIndex
   })
 
-  api.patch(`/games/${game._id}`, {ticTacToeIndex})
+  api.patch(`/games/${game._id}`, {ticTacToeIndex, game})
       .then((res) => {
           console.log(res);
           console.log(ticTacToeIndex);
