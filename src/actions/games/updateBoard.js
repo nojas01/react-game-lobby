@@ -1,15 +1,21 @@
-// import API from '../../api/client'
+import API from '../../api/client'
+// import game from '../../containers/Game'
 
 export const UPDATE_BOARD = 'UPDATE_BOARD'
 
-// const api = new API()
+const api = new API()
 
-export default index => (dispatch) => () => {
+export default (ticTacToeIndex, game) => (dispatch) => () => {
   dispatch ({
     type: 'UPDATE_BOARD',
-    payload: index
+    payload: ticTacToeIndex
   })
 
+  api.patch(`/games/${game._id}`, {ticTacToeIndex})
+      .then((res) => {
+          console.log(res);
+          console.log(ticTacToeIndex);
+      })
 
 }
 

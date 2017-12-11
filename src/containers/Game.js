@@ -61,7 +61,7 @@ class Game extends PureComponent {
   }
 
   renderTile = (value, index) => {
-    return <Tile key={index} onClick={this.props.takeTile(index)} value={value} />
+    return <Tile key={index} onClick={this.props.takeTile(index, this.props.game)} value={value} />
   }
 
 
