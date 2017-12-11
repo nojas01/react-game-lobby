@@ -3,7 +3,6 @@ import './Tile.css'
 
 class Tile extends PureComponent {
   render() {
-    console.log(this.props.onClick);
     return (
       <div className="Tile" onClick={this.props.onClick}>
 
