@@ -22,6 +22,7 @@ class Game extends PureComponent {
     subscribeToWebsocket: PropTypes.func.isRequired,
     game: PropTypes.shape({
       tiles: PropTypes.arrayOf(PropTypes.string),
+      winner: PropTypes.string,
       _id: PropTypes.string.isRequired,
       userId: PropTypes.string.isRequired,
       players: PropTypes.arrayOf(playerShape),
@@ -83,6 +84,7 @@ class Game extends PureComponent {
         <h1>YOUR GAME HERE! :)</h1>
         <div className="Board">
         {this.props.game.tiles.map(this.renderTile)}
+        <p>And the winner is:{this.props.game.winner}</p>
         </div>
 
         <JoinGameDialog gameId={game._id} />
